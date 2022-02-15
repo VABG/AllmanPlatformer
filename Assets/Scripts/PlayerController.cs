@@ -17,10 +17,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundStopDampening = 20.0f;
     [SerializeField] float airMoveDampening = 0.5f;
 
-    // Jump OnGround-disabling
-    float timeSinceJump = 10;
-    float noOnGroundJumpTime = .1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,13 +33,6 @@ public class PlayerController : MonoBehaviour
     {
         // Assume no input
         float dirInput = 0;
-
-        // Jump time counter
-        if (timeSinceJump < noOnGroundJumpTime)
-        {
-            timeSinceJump += Time.deltaTime;
-            onGround = false;
-        }
 
         // Get move input
         if (Input.GetKey(KeyCode.D)) dirInput += 1;
@@ -90,13 +79,11 @@ public class PlayerController : MonoBehaviour
             // Set y velocity to jump velocity. This will make all jumps exactly the same height (unless collision or something)
             rb.velocity = new Vector3(rb.velocity.x, jumpVelocity, rb.velocity.z);
             // Reset jump timer
-            timeSinceJump = 0;
         }
     }
 
     public void SetOnGround(bool onGround)
     {
-        if (onGround && timeSinceJump < noOnGroundJumpTime) return;
         this.onGround = onGround;
     }
 }
