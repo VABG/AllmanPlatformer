@@ -17,10 +17,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundStopDampening = 20.0f;
     [SerializeField] float airMoveDampening = 0.5f;
 
+
+    CapsuleCollider collider;
+
+    // Health
+    float health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        collider = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -53,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             // If no input or(|| means or) trying to move in opposite direction
             // Mathf.Sign returns either 1 or -1 (or 0 I guess) so we can compare if they're the same.
-            if (dirInput == 0 || Mathf.Sign(rb.velocity.x) != Mathf.Sign(dirInput)) 
+            if (dirInput == 0 || Mathf.Sign(rb.velocity.x) != Mathf.Sign(dirInput))
                 rb.velocity -= new Vector3(Time.deltaTime * rb.velocity.x * groundStopDampening, 0, 0);
             else rb.velocity -= new Vector3(Time.deltaTime * rb.velocity.x * groundMoveDampening, 0, 0);
             // By subtracting velocity with itself by a lower value (Time.deltaTime is very small!) we get resistance!
@@ -86,4 +93,29 @@ public class PlayerController : MonoBehaviour
     {
         this.onGround = onGround;
     }
+
+    public void Bounce(Vector3 bounceForce)
+    {
+        rb.velocity = bounceForce;
+        onGround = false;
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        health -= dmg;
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        rb.freezeRotation = false;
+        rb.AddTorque(Vector3.forward * 50);
+        collider.material = new PhysicMaterial();
+        this.enabled = false;
+    }
+
 }
