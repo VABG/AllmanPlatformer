@@ -19,6 +19,7 @@ public class LavaPlatform : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         PlayerController p = collision.rigidbody.GetComponent<PlayerController>();
+        if (p == null) return;
         p.TakeDamage(50);
         p.Bounce(Vector3.Normalize(p.transform.position - transform.position) * 3);
     }
