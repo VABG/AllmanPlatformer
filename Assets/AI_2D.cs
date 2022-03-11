@@ -39,7 +39,7 @@ public class AI_2D : MonoBehaviour
         }
 
         anim.SetMoveSpeed(rb.velocity.x);
-
+        anim.SetFallSpeed(rb.velocity.y);
     }
 
     void WallCheck()
