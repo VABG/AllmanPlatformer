@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 508354235}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605163748}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960420065}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966538160}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 1150901085}
   - component: {fileID: 1150901084}
   - component: {fileID: 1150901083}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: JumpTrigger (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   - component: {fileID: 1287792501}
   - component: {fileID: 1287792500}
   - component: {fileID: 1287792499}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: JumpTrigger (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 1299521025}
   - component: {fileID: 1299521024}
   - component: {fileID: 1299521023}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: JumpTrigger (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 1471306096}
   - component: {fileID: 1471306095}
   - component: {fileID: 1471306098}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: JumpTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
