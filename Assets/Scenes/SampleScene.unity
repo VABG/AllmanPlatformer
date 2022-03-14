@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &393923901 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1189418176, guid: ba46956fa3889c14f939c608b428c148, type: 3}
+  m_PrefabInstance: {fileID: 6534647896512836071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482012440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1618,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoint: {fileID: 966538160}
   jumpSpeed: 0.75
+--- !u!1 &1545672612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6534647895711224713, guid: ba46956fa3889c14f939c608b428c148, type: 3}
+  m_PrefabInstance: {fileID: 6534647896512836071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545672613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545672612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6578f6f7e1187840b07235011c1cc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 393923901}
 --- !u!1 &1652464656
 GameObject:
   m_ObjectHideFlags: 0
