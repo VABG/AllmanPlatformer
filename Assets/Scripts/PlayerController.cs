@@ -123,6 +123,8 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = false;
         rb.AddTorque(Vector3.forward * 50);
         collider.material = new PhysicMaterial();
+        anim.SetSpeed(1.0f);
+        anim.SetOnGround(true);
         this.enabled = false;
     }
 
