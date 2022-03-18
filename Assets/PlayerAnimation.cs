@@ -6,17 +6,14 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] Animator anim;
     bool onGround = false;
-    bool facing = true;
 
     int moveSpeedID;
-    int facingID;
     int onGroundID;
 
     // Start is called before the first frame update
     void Start()
     {
         moveSpeedID = Animator.StringToHash("MoveSpeed");
-        facingID = Animator.StringToHash("Facing");
         onGroundID = Animator.StringToHash("OnGround");
     }
 
@@ -37,12 +34,6 @@ public class PlayerAnimation : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        anim.SetFloat(moveSpeedID, Mathf.Abs(speed));
-
-        if ((speed >= 0 && !facing) || speed < 0 && facing)
-        {
-            facing = !facing;
-            anim.SetBool(facingID, facing);
-        }
+        anim.SetFloat(moveSpeedID, speed);
     }
 }
