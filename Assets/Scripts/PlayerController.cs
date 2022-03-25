@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundStopDampening = 20.0f;
     [SerializeField] float airMoveDampening = 0.5f;
 
-
+    PlayerAnimation anim;
     CapsuleCollider collider;
 
     // Health
@@ -28,12 +28,14 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
+        anim = GetComponent<PlayerAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateInput();
+        SendAnimationInfo();
     }
 
     void UpdateInput()
@@ -76,6 +78,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
     }
 
+    void SendAnimationInfo()
+    {
+        anim.SetOnGround(onGround);
+        anim.SetSpeed(rb.velocity.x);
+    }
+
     void Jump()
     {
         // Can only jump if on ground!
@@ -115,6 +123,8 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = false;
         rb.AddTorque(Vector3.forward * 50);
         collider.material = new PhysicMaterial();
+        anim.SetSpeed(1.0f);
+        anim.SetOnGround(true);
         this.enabled = false;
     }
 
